@@ -1,0 +1,70 @@
+{
+	"account" : {
+		"accountName": "Bank Account Name",
+		"accountNumber": "123456 789 0123",
+		"available": 100.00,
+		"balance": 89.00
+	},
+	"transactions":
+        [{
+            "id": "100",
+            "dateTransaction": "01/01/2013",
+            "description": "Description transaction 100",
+            "amount": 20.00
+         },
+         {
+            "id": "101",
+            "dateTransaction": "01/01/2013",
+            "description": "Description transaction 101",
+            "amount": 40.00
+         },
+         {
+            "id": "102",
+            "description": "Description transaction 102",
+            "dateTransaction": "02/01/2013",
+            "amount": -20.00
+         },
+         {
+            "id": "103",
+            "description": "Description transaction 103",
+            "dateTransaction": "10/04/2013",
+            "amount": 200.00
+         },
+         {
+            "id": "104",
+            "description": "Description transaction 104",
+            "dateTransaction": "01/07/2013",
+            "amount": -400.00
+         },
+         {
+            "id": "105",
+            "description": "Description transaction 105",
+            "dateTransaction": "08/07/2013",
+            "amount": -30.00
+         },
+         {
+            "id": "106",
+            "description": "Description transaction 106",
+            "dateTransaction": "03/09/2013",
+            "amount": -20.00
+         },
+         {
+            "id": "107",
+            "description": "Description transaction 107",
+            "dateTransaction": "01/10/2013",
+            "amount": -60.00
+         }],
+        "pending" :
+        [{
+            "id": "P108",
+            "description": "Description Pending transaction P108",
+            "dateTransaction": "20/04/2013",
+            "amount": -140.00
+         },
+         {
+            "id": "P109",
+            "description": "Description Pending transaction P108",
+            "dateTransaction": "07/04/2013",
+            "amount": -50.00
+         }]
+}

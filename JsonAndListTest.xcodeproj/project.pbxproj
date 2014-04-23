@@ -19,6 +19,14 @@
 		331C84E219069E62001C5A44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331C84CA19069E62001C5A44 /* UIKit.framework */; };
 		331C84EA19069E62001C5A44 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 331C84E819069E62001C5A44 /* InfoPlist.strings */; };
 		331C84EC19069E62001C5A44 /* JsonAndListTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 331C84EB19069E62001C5A44 /* JsonAndListTestTests.m */; };
+		331C84F619069EA9001C5A44 /* dummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 331C84F519069EA9001C5A44 /* dummy.json */; };
+		331C84FA19069F71001C5A44 /* KVAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 331C84F919069F71001C5A44 /* KVAccount.m */; };
+		331C84FD19069FC2001C5A44 /* KVDetailsJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 331C84FC19069FC2001C5A44 /* KVDetailsJSON.m */; };
+		331C850019069FFE001C5A44 /* KVPending.m in Sources */ = {isa = PBXBuildFile; fileRef = 331C84FF19069FFE001C5A44 /* KVPending.m */; };
+		331C85031906A031001C5A44 /* KVTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = 331C85021906A031001C5A44 /* KVTransactions.m */; };
+		331C85071906A0D7001C5A44 /* KVParserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 331C85061906A0D7001C5A44 /* KVParserDetail.m */; };
+		33C2A4731907E5EB00F92768 /* KVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C2A4711907E5EB00F92768 /* KVViewController.m */; };
+		33C2A4741907E5EB00F92768 /* KVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C2A4721907E5EB00F92768 /* KVViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +56,20 @@
 		331C84E719069E62001C5A44 /* JsonAndListTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JsonAndListTestTests-Info.plist"; sourceTree = "<group>"; };
 		331C84E919069E62001C5A44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		331C84EB19069E62001C5A44 /* JsonAndListTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JsonAndListTestTests.m; sourceTree = "<group>"; };
+		331C84F519069EA9001C5A44 /* dummy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dummy.json; sourceTree = "<group>"; };
+		331C84F819069F71001C5A44 /* KVAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVAccount.h; sourceTree = "<group>"; };
+		331C84F919069F71001C5A44 /* KVAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVAccount.m; sourceTree = "<group>"; };
+		331C84FB19069FC2001C5A44 /* KVDetailsJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVDetailsJSON.h; sourceTree = "<group>"; };
+		331C84FC19069FC2001C5A44 /* KVDetailsJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVDetailsJSON.m; sourceTree = "<group>"; };
+		331C84FE19069FFE001C5A44 /* KVPending.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVPending.h; sourceTree = "<group>"; };
+		331C84FF19069FFE001C5A44 /* KVPending.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVPending.m; sourceTree = "<group>"; };
+		331C85011906A031001C5A44 /* KVTransactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVTransactions.h; sourceTree = "<group>"; };
+		331C85021906A031001C5A44 /* KVTransactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVTransactions.m; sourceTree = "<group>"; };
+		331C85051906A0D7001C5A44 /* KVParserDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVParserDetail.h; sourceTree = "<group>"; };
+		331C85061906A0D7001C5A44 /* KVParserDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVParserDetail.m; sourceTree = "<group>"; };
+		33C2A4701907E5EB00F92768 /* KVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVViewController.h; sourceTree = "<group>"; };
+		33C2A4711907E5EB00F92768 /* KVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVViewController.m; sourceTree = "<group>"; };
+		33C2A4721907E5EB00F92768 /* KVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KVViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +129,9 @@
 		331C84CC19069E62001C5A44 /* JsonAndListTest */ = {
 			isa = PBXGroup;
 			children = (
+				331C850B1906A626001C5A44 /* au.com.controller */,
+				331C85041906A075001C5A44 /* au.com.parser */,
+				331C84F719069EBD001C5A44 /* au.com.domain */,
 				331C84D519069E62001C5A44 /* KVAppDelegate.h */,
 				331C84D619069E62001C5A44 /* KVAppDelegate.m */,
 				331C84D819069E62001C5A44 /* Images.xcassets */,
@@ -118,6 +143,8 @@
 		331C84CD19069E62001C5A44 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				331C85081906A314001C5A44 /* au.com.screens */,
+				331C84F519069EA9001C5A44 /* dummy.json */,
 				331C84CE19069E62001C5A44 /* JsonAndListTest-Info.plist */,
 				331C84CF19069E62001C5A44 /* InfoPlist.strings */,
 				331C84D219069E62001C5A44 /* main.m */,
@@ -142,6 +169,47 @@
 				331C84E819069E62001C5A44 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		331C84F719069EBD001C5A44 /* au.com.domain */ = {
+			isa = PBXGroup;
+			children = (
+				331C84F819069F71001C5A44 /* KVAccount.h */,
+				331C84F919069F71001C5A44 /* KVAccount.m */,
+				331C84FB19069FC2001C5A44 /* KVDetailsJSON.h */,
+				331C84FC19069FC2001C5A44 /* KVDetailsJSON.m */,
+				331C84FE19069FFE001C5A44 /* KVPending.h */,
+				331C84FF19069FFE001C5A44 /* KVPending.m */,
+				331C85011906A031001C5A44 /* KVTransactions.h */,
+				331C85021906A031001C5A44 /* KVTransactions.m */,
+			);
+			name = au.com.domain;
+			sourceTree = "<group>";
+		};
+		331C85041906A075001C5A44 /* au.com.parser */ = {
+			isa = PBXGroup;
+			children = (
+				331C85051906A0D7001C5A44 /* KVParserDetail.h */,
+				331C85061906A0D7001C5A44 /* KVParserDetail.m */,
+			);
+			name = au.com.parser;
+			sourceTree = "<group>";
+		};
+		331C85081906A314001C5A44 /* au.com.screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = au.com.screens;
+			sourceTree = "<group>";
+		};
+		331C850B1906A626001C5A44 /* au.com.controller */ = {
+			isa = PBXGroup;
+			children = (
+				33C2A4701907E5EB00F92768 /* KVViewController.h */,
+				33C2A4711907E5EB00F92768 /* KVViewController.m */,
+				33C2A4721907E5EB00F92768 /* KVViewController.xib */,
+			);
+			name = au.com.controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				331C84D119069E62001C5A44 /* InfoPlist.strings in Resources */,
+				33C2A4741907E5EB00F92768 /* KVViewController.xib in Resources */,
 				331C84D919069E62001C5A44 /* Images.xcassets in Resources */,
+				331C84F619069EA9001C5A44 /* dummy.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +311,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				331C84D319069E62001C5A44 /* main.m in Sources */,
+				331C84FA19069F71001C5A44 /* KVAccount.m in Sources */,
 				331C84D719069E62001C5A44 /* KVAppDelegate.m in Sources */,
+				331C85031906A031001C5A44 /* KVTransactions.m in Sources */,
+				331C850019069FFE001C5A44 /* KVPending.m in Sources */,
+				33C2A4731907E5EB00F92768 /* KVViewController.m in Sources */,
+				331C84FD19069FC2001C5A44 /* KVDetailsJSON.m in Sources */,
+				331C85071906A0D7001C5A44 /* KVParserDetail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +514,7 @@
 				331C84F119069E62001C5A44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		331C84F219069E62001C5A44 /* Build configuration list for PBXNativeTarget "JsonAndListTestTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +523,7 @@
 				331C84F419069E62001C5A44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

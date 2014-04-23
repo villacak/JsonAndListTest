@@ -7,14 +7,21 @@
 //
 
 #import "KVAppDelegate.h"
+#import "KVViewController.h"
+
 
 @implementation KVAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    KVViewController *viewController = [[KVViewController alloc] initWithNibName:@"KVViewController" bundle:nil];
+    [self.window setRootViewController:viewController];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
