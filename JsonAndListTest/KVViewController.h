@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KVDetailsJSON.h"
 
 @interface KVViewController : UIViewController
+{
+    KVDetailsJSON *myJsonAsObject;
+    
+    IBOutlet UILabel *accDetails;
+    IBOutlet UILabel *todaysDate;
+}
 
 @end

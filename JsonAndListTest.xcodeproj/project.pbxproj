@@ -25,6 +25,7 @@
 		331C850019069FFE001C5A44 /* KVPending.m in Sources */ = {isa = PBXBuildFile; fileRef = 331C84FF19069FFE001C5A44 /* KVPending.m */; };
 		331C85031906A031001C5A44 /* KVTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = 331C85021906A031001C5A44 /* KVTransactions.m */; };
 		331C85071906A0D7001C5A44 /* KVParserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 331C85061906A0D7001C5A44 /* KVParserDetail.m */; };
+		33471B15190A63E200942AE1 /* KVTransactionsHeaderScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 33471B14190A63E200942AE1 /* KVTransactionsHeaderScreen.m */; };
 		33C2A4731907E5EB00F92768 /* KVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C2A4711907E5EB00F92768 /* KVViewController.m */; };
 		33C2A4741907E5EB00F92768 /* KVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C2A4721907E5EB00F92768 /* KVViewController.xib */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,8 @@
 		331C85021906A031001C5A44 /* KVTransactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVTransactions.m; sourceTree = "<group>"; };
 		331C85051906A0D7001C5A44 /* KVParserDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVParserDetail.h; sourceTree = "<group>"; };
 		331C85061906A0D7001C5A44 /* KVParserDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVParserDetail.m; sourceTree = "<group>"; };
+		33471B13190A63E200942AE1 /* KVTransactionsHeaderScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVTransactionsHeaderScreen.h; sourceTree = "<group>"; };
+		33471B14190A63E200942AE1 /* KVTransactionsHeaderScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVTransactionsHeaderScreen.m; sourceTree = "<group>"; };
 		33C2A4701907E5EB00F92768 /* KVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVViewController.h; sourceTree = "<group>"; };
 		33C2A4711907E5EB00F92768 /* KVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVViewController.m; sourceTree = "<group>"; };
 		33C2A4721907E5EB00F92768 /* KVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KVViewController.xib; sourceTree = "<group>"; };
@@ -129,6 +132,7 @@
 		331C84CC19069E62001C5A44 /* JsonAndListTest */ = {
 			isa = PBXGroup;
 			children = (
+				33471B12190A5FC600942AE1 /* au.com.tables */,
 				331C850B1906A626001C5A44 /* au.com.controller */,
 				331C85041906A075001C5A44 /* au.com.parser */,
 				331C84F719069EBD001C5A44 /* au.com.domain */,
@@ -198,6 +202,7 @@
 		331C85081906A314001C5A44 /* au.com.screens */ = {
 			isa = PBXGroup;
 			children = (
+				33C2A4721907E5EB00F92768 /* KVViewController.xib */,
 			);
 			name = au.com.screens;
 			sourceTree = "<group>";
@@ -207,9 +212,17 @@
 			children = (
 				33C2A4701907E5EB00F92768 /* KVViewController.h */,
 				33C2A4711907E5EB00F92768 /* KVViewController.m */,
-				33C2A4721907E5EB00F92768 /* KVViewController.xib */,
 			);
 			name = au.com.controller;
+			sourceTree = "<group>";
+		};
+		33471B12190A5FC600942AE1 /* au.com.tables */ = {
+			isa = PBXGroup;
+			children = (
+				33471B13190A63E200942AE1 /* KVTransactionsHeaderScreen.h */,
+				33471B14190A63E200942AE1 /* KVTransactionsHeaderScreen.m */,
+			);
+			name = au.com.tables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +329,7 @@
 				331C85031906A031001C5A44 /* KVTransactions.m in Sources */,
 				331C850019069FFE001C5A44 /* KVPending.m in Sources */,
 				33C2A4731907E5EB00F92768 /* KVViewController.m in Sources */,
+				33471B15190A63E200942AE1 /* KVTransactionsHeaderScreen.m in Sources */,
 				331C84FD19069FC2001C5A44 /* KVDetailsJSON.m in Sources */,
 				331C85071906A0D7001C5A44 /* KVParserDetail.m in Sources */,
 			);

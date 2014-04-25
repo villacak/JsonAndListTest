@@ -12,7 +12,7 @@
 
 @property NSString *accountName;
 @property NSString *accountNumber;
-@property NSString *available;
-@property NSString *balance;
+@property NSNumber *available;
+@property NSNumber *balance;
 
 @end

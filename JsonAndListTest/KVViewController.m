@@ -9,29 +9,25 @@
 #import "KVViewController.h"
 #import "KVDetailsJSON.h"
 #import "KVParserDetail.h"
+#import "KVTransactionsHeaderScreen.h"
 
 @interface KVViewController ()
 
 @end
 
+
+
 @implementation KVViewController
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        // Custom initialization        
         NSString *pathJsonFromFile = [[NSBundle mainBundle] pathForResource:@"dummy" ofType:@"json"];
-        
-        KVDetailsJSON *myJsonAsObject = [[[KVParserDetail alloc] init] parseJSON:pathJsonFromFile];
-        
-        NSString *accountNAmeStr = [[myJsonAsObject account] accountName];
-        NSLog(@"Account Name  is %@", accountNAmeStr);
-        
-        accountNAmeStr = nil;
-        myJsonAsObject = nil;
+        myJsonAsObject = [[[KVParserDetail alloc] init] parseJSON:pathJsonFromFile];
         pathJsonFromFile = nil;
-
     }
     return self;
 }
@@ -39,6 +35,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    KVTransactionsHeaderScreen *headerDetails = [[KVTransactionsHeaderScreen alloc] init];
+    [accDetails setText:[headerDetails getHeaderDetails:myJsonAsObject.account]];
+    [todaysDate setText:[headerDetails getHeaderTodayDate]];
+    
+
     // Do any additional setup after loading the view from its nib.
 }
 
