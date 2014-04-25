@@ -13,6 +13,6 @@
 @property NSString *idPending;
 @property NSString *description;
 @property NSString *dateTransaction;
-@property NSString *amount;
+@property NSNumber *amount;
 
 @end
