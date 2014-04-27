@@ -15,4 +15,9 @@
 @property NSString *dateTransaction;
 @property NSNumber *amount;
 
+-(id) initWithValueIdPending:(NSString *)idPending
+            valueDescription:(NSString *)description
+        valueDateTransaction:(NSString *)dateTransaction
+                 valueAmount:(NSNumber *)amount;
+
 @end

@@ -10,4 +10,17 @@
 
 @implementation KVDetailsJSON
 
+-(id) initWithValueKVAccount:(KVAccount *)account
+           valueTransactions:(NSArray *)transactionsArray
+                valuePending:(NSArray *)pendingArray
+{
+    self = [super init];
+    if (self) {
+        [self setAccount:account];
+        [self setTransactionsArray:transactionsArray];
+        [self setPendingArray:pendingArray];
+    }
+    return self;
+}
+
 @end

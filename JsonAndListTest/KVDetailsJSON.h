@@ -15,4 +15,8 @@
 @property NSArray *transactionsArray;
 @property NSArray *pendingArray;
 
+-(id) initWithValueKVAccount:(KVAccount *)account
+           valueTransactions:(NSArray *)transactionsArray
+                valuePending:(NSArray *)pendingArry;
+
 @end

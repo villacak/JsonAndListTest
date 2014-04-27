@@ -10,4 +10,19 @@
 
 @implementation KVTransactions
 
+-(id) initWithValueIdTransaction:(NSString *)idTransaction
+            valueDateTransaction:(NSString *)dateTransaction
+                valueDescription:(NSString *)description
+                     valueAmount:(NSNumber *)amount
+{
+    self = [super init];
+    if (self) {
+        [self setIdTransaction:idTransaction];
+        [self setDateTransaction:dateTransaction];
+        [self setDescription:description];
+        [self setAmount:amount];
+    }
+    return self;
+}
+
 @end

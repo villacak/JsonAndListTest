@@ -15,4 +15,9 @@
 @property NSNumber *available;
 @property NSNumber *balance;
 
+-(id) initWithValueAccountName:(NSString *)accountName
+             valueAccountNumber:(NSString *)accountNumber
+                 valueAvailable:(NSNumber *)available
+                  valueBalance:(NSNumber *)balance;
+
 @end

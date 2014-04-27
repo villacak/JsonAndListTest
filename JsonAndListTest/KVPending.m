@@ -10,4 +10,19 @@
 
 @implementation KVPending
 
+-(id) initWithValueIdPending:(NSString *)idPending
+            valueDescription:(NSString *)description
+        valueDateTransaction:(NSString *)dateTransaction
+                 valueAmount:(NSNumber *)amount
+{
+    self = [super init];
+    if (self) {
+        [self setIdPending:idPending];
+        [self setDescription:description];
+        [self setDateTransaction:dateTransaction];
+        [self setAmount:amount];
+    }
+    return self;
+}
+
 @end

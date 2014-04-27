@@ -2,8 +2,8 @@
 	"account" : {
 		"accountName": "Bank Account Name",
 		"accountNumber": "123456 789 0123",
-		"available": 100.00,
-		"balance": 89.00
+		"available": 100.50,
+		"balance": 89.50
 	},
 	"transactions":
         [{

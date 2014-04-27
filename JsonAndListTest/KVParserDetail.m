@@ -14,9 +14,7 @@
 
 - (KVDetailsJSON *)parseJSON:(NSString *)jsonStr
 {
-    
     NSData *jsonData = [NSData dataWithContentsOfFile:jsonStr];
-//    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
     
     NSDictionary *accountDictionary = [json objectForKey:@"account"];
@@ -35,11 +33,10 @@
 
 -(void) parseAccount:(NSDictionary *)jsonAccountDic
 {
-    account = [[KVAccount alloc] init];
-    account.accountName = [jsonAccountDic valueForKey:@"accountName"];
-    account.accountNumber = [jsonAccountDic valueForKey:@"accountNumber"];
-    account.available = [jsonAccountDic valueForKey:@"available"];
-    account.balance = [jsonAccountDic valueForKey:@"balance"];
+    account = [[KVAccount alloc] initWithValueAccountName:[jsonAccountDic valueForKey:@"accountName"]
+                                       valueAccountNumber:[jsonAccountDic valueForKey:@"accountNumber"]
+                                           valueAvailable:[jsonAccountDic valueForKey:@"available"]
+                                             valueBalance:[jsonAccountDic valueForKey:@"balance"]];
     
     if (account != nil && [account.accountNumber length] > 0 ) {
         details.account = account;
@@ -54,11 +51,10 @@
         NSMutableArray *tempArray = [[NSMutableArray alloc] init];
         KVTransactions *tempTransaction = nil;
         for (NSDictionary *trans in jsonTRansactions) {
-            tempTransaction = [[KVTransactions alloc] init];
-            tempTransaction.idTransaction = [trans valueForKey:@"id"];
-            tempTransaction.description = [trans valueForKey:@"description"];
-            tempTransaction.dateTransaction = [trans valueForKey:@"dateTransaction"];
-            tempTransaction.amount = [trans valueForKey:@"amount"];
+            tempTransaction = [[KVTransactions alloc] initWithValueIdTransaction:[trans valueForKey:@"id"]
+                                                            valueDateTransaction:[trans valueForKey:@"dateTransaction"]
+                                                                valueDescription:[trans valueForKey:@"description"]
+                                                                     valueAmount:[trans valueForKey:@"amount"]];
             [tempArray addObject:trans];
         }
         details.transactionsArray = [[NSArray alloc] initWithArray:tempArray];
@@ -75,11 +71,10 @@
         NSMutableArray *tempArray = [[NSMutableArray alloc] init];
         KVPending *tempPending = nil;
         for (NSDictionary *tempDic in jsonPending) {
-            tempPending = [[KVPending alloc] init];
-            tempPending.idPending = [tempDic valueForKey:@"id"];
-            tempPending.description = [tempDic valueForKey:@"description"];
-            tempPending.dateTransaction = [tempDic valueForKey:@"dateTransaction"];
-            tempPending.amount = [tempDic valueForKey:@"amount"];
+            tempPending = [[KVPending alloc] initWithValueIdPending:[tempDic valueForKey:@"id"]
+                                                   valueDescription:[tempDic valueForKey:@"description"]
+                                               valueDateTransaction:[tempDic valueForKey:@"dateTransaction"]
+                                                        valueAmount:[tempDic valueForKey:@"amount"]];
             [tempArray addObject:tempPending];
         }
         details.pendingArray = [[NSArray alloc] initWithArray:tempArray];

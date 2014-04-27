@@ -10,4 +10,17 @@
 
 @implementation KVAccount
 
+-(id)initWithValueAccountName:(NSString *)accountName valueAccountNumber:(NSString *)accountNumber valueAvailable:(NSNumber *)available valueBalance:(NSNumber *)balance
+{
+    self = [super init];
+    if (self) {
+        [self setAccountName:accountName];
+        [self setAccountNumber:accountNumber];
+        [self setAvailable:available];
+        [self setBalance:balance];
+        
+    }
+    return self;
+}
+
 @end
