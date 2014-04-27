@@ -18,6 +18,6 @@
 
 //-(UITableViewCell *) pupulateCellWithTransactions:(NSArray *)transactionArray andPendings:(NSArray *)pendingArray;
 
--(NSDictionary *) getArrayOrderedByDateMergingTransactions:(NSArray *)transactionArray andPendings:(NSArray *)pendingArray;
+-(NSDictionary *) getDictionaryToOrderByDateMergingTransactions:(NSArray *)transactionArray andPendings:(NSArray *)pendingArray;
 
 @end
