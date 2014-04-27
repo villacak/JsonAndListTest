@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "KVAccount.h"
+#import "KVStringUtil.h"
 
 @interface KVTransactionsHeaderScreen : NSObject
-
+{
+    KVStringUtil *kvUtils;
+}
 
 -(NSString *) getHeaderDetails:(KVAccount *)account;
 -(NSString *) getHeaderTodayDate;

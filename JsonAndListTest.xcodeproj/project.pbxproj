@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330E31E2190CACE5000C92D4 /* KVStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 330E31E1190CACE5000C92D4 /* KVStringUtil.m */; };
 		331C84C719069E62001C5A44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331C84C619069E62001C5A44 /* Foundation.framework */; };
 		331C84C919069E62001C5A44 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331C84C819069E62001C5A44 /* CoreGraphics.framework */; };
 		331C84CB19069E62001C5A44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331C84CA19069E62001C5A44 /* UIKit.framework */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		330E31E0190CACE5000C92D4 /* KVStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVStringUtil.h; sourceTree = "<group>"; };
+		330E31E1190CACE5000C92D4 /* KVStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVStringUtil.m; sourceTree = "<group>"; };
 		331C84C319069E62001C5A44 /* JsonAndListTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JsonAndListTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		331C84C619069E62001C5A44 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		331C84C819069E62001C5A44 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -99,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		330E31DF190CACC7000C92D4 /* au.com.utils */ = {
+			isa = PBXGroup;
+			children = (
+				330E31E0190CACE5000C92D4 /* KVStringUtil.h */,
+				330E31E1190CACE5000C92D4 /* KVStringUtil.m */,
+			);
+			name = au.com.utils;
+			sourceTree = "<group>";
+		};
 		331C84BA19069E62001C5A44 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +144,7 @@
 		331C84CC19069E62001C5A44 /* JsonAndListTest */ = {
 			isa = PBXGroup;
 			children = (
+				330E31DF190CACC7000C92D4 /* au.com.utils */,
 				33471B12190A5FC600942AE1 /* au.com.tables */,
 				331C850B1906A626001C5A44 /* au.com.controller */,
 				331C85041906A075001C5A44 /* au.com.parser */,
@@ -330,6 +343,7 @@
 				331C850019069FFE001C5A44 /* KVPending.m in Sources */,
 				33C2A4731907E5EB00F92768 /* KVViewController.m in Sources */,
 				33471B15190A63E200942AE1 /* KVTransactionsHeaderScreen.m in Sources */,
+				330E31E2190CACE5000C92D4 /* KVStringUtil.m in Sources */,
 				331C84FD19069FC2001C5A44 /* KVDetailsJSON.m in Sources */,
 				331C85071906A0D7001C5A44 /* KVParserDetail.m in Sources */,
 			);
