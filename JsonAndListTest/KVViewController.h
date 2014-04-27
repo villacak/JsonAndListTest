@@ -15,6 +15,7 @@
     
     IBOutlet UILabel *accDetails;
     IBOutlet UILabel *todaysDate;
+    IBOutlet UITableView *transactionsTable;
 }
 
 @end

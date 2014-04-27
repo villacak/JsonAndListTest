@@ -38,6 +38,7 @@
     KVTransactionsHeaderScreen *headerDetails = [[KVTransactionsHeaderScreen alloc] init];
     [accDetails setText:[headerDetails getHeaderDetails:myJsonAsObject.account]];
     [todaysDate setText:[headerDetails getHeaderTodayDate]];
+//    [transactionsTable ];
     
     accDetails = nil;
     todaysDate = nil;

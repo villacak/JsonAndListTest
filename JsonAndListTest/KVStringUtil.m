@@ -16,7 +16,7 @@
 //    if (self) {
 //        numberAsStringFormatted = [NSString stringWithFormat:@"%.2f", valueNumber];
 //    }
-//    return self;
+//    return numberAsStringFormatted;
 //}
 
 -(NSString *) getNumberValueAsFormattedString:(NSNumber *)valueNumber
