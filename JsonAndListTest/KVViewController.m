@@ -39,6 +39,10 @@
     [accDetails setText:[headerDetails getHeaderDetails:myJsonAsObject.account]];
     [todaysDate setText:[headerDetails getHeaderTodayDate]];
     
+    accDetails = nil;
+    todaysDate = nil;
+    myJsonAsObject = nil;
+    headerDetails = nil;
 
     // Do any additional setup after loading the view from its nib.
 }

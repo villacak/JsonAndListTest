@@ -19,10 +19,6 @@
 @property KVTransactions *transactions;
 @property KVPending *pending;
 
-@property NSArray *mutableArray;
-@property NSDictionary *tempDictionary;
-
-
 -(KVDetailsJSON *)parseJSON:(NSString *)jsonStr;
 
 -(void)parseAccount:(NSDictionary *)jsonAccount;

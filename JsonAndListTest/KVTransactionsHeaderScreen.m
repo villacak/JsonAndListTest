@@ -19,9 +19,9 @@
     NSString *nameAccount = [account.accountName stringByAppendingString:newLine];
     NSString *numberAcc = [account.accountNumber stringByAppendingString:newLine];
     NSString *balanceFormatted = [kvUtils getNumberValueAsFormattedString:account.balance];
-    NSString *balance = [[@"Balance :$" stringByAppendingString:balanceFormatted] stringByAppendingString:newLine];
+    NSString *balance = [[@"Balance $" stringByAppendingString:balanceFormatted] stringByAppendingString:newLine];
     NSString *availableFormatted = [kvUtils getNumberValueAsFormattedString:account.available];
-    NSString *availableValue = [[@"Available :$" stringByAppendingString:availableFormatted] stringByAppendingString:newLine];
+    NSString *availableValue = [[@"Available $" stringByAppendingString:availableFormatted] stringByAppendingString:newLine];
     
     NSMutableString *strToReturn = [[NSMutableString alloc] init];
     [strToReturn appendString:nameAccount];

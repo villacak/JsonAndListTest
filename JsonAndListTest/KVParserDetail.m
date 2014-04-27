@@ -10,7 +10,7 @@
 
 @implementation KVParserDetail
 
-@synthesize details, account, transactions, pending, mutableArray, tempDictionary;
+@synthesize details, account, transactions, pending;
 
 - (KVDetailsJSON *)parseJSON:(NSString *)jsonStr
 {
@@ -26,6 +26,12 @@
     [self parseAccount:accountDictionary];
     [self parseTransactions:trasactionDictionary] ;
     [self parsePending:pendingDictionary];
+    
+    pendingDictionary = nil;
+    trasactionDictionary = nil;
+    accountDictionary = nil;
+    json = nil;
+    jsonData = nil;
     
     return details;
 }
@@ -58,8 +64,8 @@
             [tempArray addObject:trans];
         }
         details.transactionsArray = [[NSArray alloc] initWithArray:tempArray];
-        tempArray = nil;
         tempTransaction = nil;
+        tempArray = nil;
         
     }
 }
