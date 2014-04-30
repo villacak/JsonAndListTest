@@ -11,9 +11,6 @@
 #import "KVStringUtil.h"
 
 @interface KVTransactionsHeaderScreen : NSObject
-{
-    KVStringUtil *kvUtils;
-}
 
 -(NSString *) getHeaderDetails:(KVAccount *)account;
 -(NSString *) getHeaderTodayDate;

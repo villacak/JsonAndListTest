@@ -16,8 +16,9 @@
     KVDetailsJSON *details;
 }
 
-//-(UITableViewCell *) pupulateCellWithTransactions:(NSArray *)transactionArray andPendings:(NSArray *)pendingArray;
 
--(NSDictionary *) getDictionaryToOrderByDateMergingTransactions:(NSArray *)transactionArray andPendings:(NSArray *)pendingArray;
+-(NSDictionary *) createDictionaryMergingTransactions:(NSArray *)transactionArray andPendings:(NSArray *)pendingArray;
+
+
 
 @end

@@ -10,6 +10,7 @@
 #import "KVDetailsJSON.h"
 #import "KVParserDetail.h"
 #import "KVTransactionsHeaderScreen.h"
+#import "KVTransactionsTable.h"
 
 @interface KVViewController ()
 
@@ -27,6 +28,15 @@
         // Custom initialization        
         NSString *pathJsonFromFile = [[NSBundle mainBundle] pathForResource:@"dummy" ofType:@"json"];
         myJsonAsObject = [[[KVParserDetail alloc] init] parseJSON:pathJsonFromFile];
+        KVTransactionsTable *transactionTable = [[KVTransactionsTable alloc] init];
+        activityDictionary = [transactionTable createDictionaryMergingTransactions:myJsonAsObject.transactionsArray
+                                                                 andPendings:myJsonAsObject.pendingArray];
+        
+        // Reverse order still not working
+//        activityListDescendingOrder = [activityDictionary keysSortedByValueUsingComparator: ^(id obj1, id obj2) {
+//            // Switching the order of the operands reverses the sort direction
+//            return [obj2 compare:obj1];
+//        }];
         pathJsonFromFile = nil;
     }
     return self;
@@ -38,6 +48,7 @@
     KVTransactionsHeaderScreen *headerDetails = [[KVTransactionsHeaderScreen alloc] init];
     [accDetails setText:[headerDetails getHeaderDetails:myJsonAsObject.account]];
     [todaysDate setText:[headerDetails getHeaderTodayDate]];
+    
 //    [transactionsTable ];
     
     accDetails = nil;

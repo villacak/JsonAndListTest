@@ -12,6 +12,8 @@
 @interface KVViewController : UIViewController
 {
     KVDetailsJSON *myJsonAsObject;
+    NSDictionary *activityDictionary;
+    NSArray *activityListDescendingOrder;
     
     IBOutlet UILabel *accDetails;
     IBOutlet UILabel *todaysDate;

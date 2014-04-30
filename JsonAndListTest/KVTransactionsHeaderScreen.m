@@ -14,13 +14,12 @@
 
 -(NSString *)getHeaderDetails:(KVAccount *)account
 {
-    kvUtils = [[KVStringUtil alloc] init];
     NSString *newLine = @"\n";
     NSString *nameAccount = [account.accountName stringByAppendingString:newLine];
     NSString *numberAcc = [account.accountNumber stringByAppendingString:newLine];
-    NSString *balanceFormatted = [kvUtils getNumberValueAsFormattedString:account.balance];
+    NSString *balanceFormatted = [KVStringUtil convertNumberValueToValueWithDecimals:account.balance];
     NSString *balance = [[@"Balance $" stringByAppendingString:balanceFormatted] stringByAppendingString:newLine];
-    NSString *availableFormatted = [kvUtils getNumberValueAsFormattedString:account.available];
+    NSString *availableFormatted = [KVStringUtil convertNumberValueToValueWithDecimals:account.available];
     NSString *availableValue = [[@"Available $" stringByAppendingString:availableFormatted] stringByAppendingString:newLine];
     
     NSMutableString *strToReturn = [[NSMutableString alloc] init];

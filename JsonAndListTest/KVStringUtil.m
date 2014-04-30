@@ -10,19 +10,29 @@
 
 @implementation KVStringUtil
 
-//-(id) initWithNumberValueForFormattWithDecimals:(NSNumber *)valueNumber
-//{
-//    self = [super init];
-//    if (self) {
-//        numberAsStringFormatted = [NSString stringWithFormat:@"%.2f", valueNumber];
-//    }
-//    return numberAsStringFormatted;
-//}
-
--(NSString *) getNumberValueAsFormattedString:(NSNumber *)valueNumber
++(NSString *) convertNumberValueToValueWithDecimals:(NSNumber *)valueNumber
 {
-    numberAsStringFormatted = [NSString stringWithFormat:@"%.2f", [valueNumber doubleValue]];
+    NSString *numberAsStringFormatted = [NSString stringWithFormat:@"%.2f", [valueNumber doubleValue]];
     return numberAsStringFormatted;
 }
+
+
++(NSDate *) convertStringToDate:(NSString *)dateString
+{
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"dd/MM/yyyy"];
+    NSDate *myDate = [df dateFromString: dateString];
+    return myDate;
+}
+
+
++(NSString *) convertDateToString:(NSDate *)date
+{
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"dd/MM/yyyy"];
+    NSString *myStrDate = [df stringFromDate:date];
+    return myStrDate;
+}
+
 
 @end

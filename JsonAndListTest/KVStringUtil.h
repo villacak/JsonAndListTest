@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface KVStringUtil : NSObject
-{
-    NSString *numberAsStringFormatted;
-}
 
-//-(id) initWithNumberValueForFormattWithDecimals:(NSNumber *)valueNumber;
++(NSString *) convertNumberValueToValueWithDecimals:(NSNumber *)valueNumber;
 
--(NSString *) getNumberValueAsFormattedString:(NSNumber *)valueNumber;
++(NSDate *) convertStringToDate:(NSString *)dateString;
+
++(NSString *) convertDateToString:(NSDate *)date;
+
 
 @end
