@@ -25,18 +25,18 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization        
+        // Custom initialization
         NSString *pathJsonFromFile = [[NSBundle mainBundle] pathForResource:@"dummy" ofType:@"json"];
         myJsonAsObject = [[[KVParserDetail alloc] init] parseJSON:pathJsonFromFile];
         KVTransactionsTable *transactionTable = [[KVTransactionsTable alloc] init];
         activityDictionary = [transactionTable createDictionaryMergingTransactions:myJsonAsObject.transactionsArray
-                                                                 andPendings:myJsonAsObject.pendingArray];
+                                                                       andPendings:myJsonAsObject.pendingArray];
         
         // Reverse order still not working
-//        activityListDescendingOrder = [activityDictionary keysSortedByValueUsingComparator: ^(id obj1, id obj2) {
-//            // Switching the order of the operands reverses the sort direction
-//            return [obj2 compare:obj1];
-//        }];
+        activityListKeys = [activityDictionary allKeys];
+        activityListDescendingOrder = [activityListKeys sortedArrayUsingComparator:^(id obj1, id obj2) {
+            return [obj2 compare:obj1 options:NSNumericSearch];
+        }];
         pathJsonFromFile = nil;
     }
     return self;
@@ -49,13 +49,13 @@
     [accDetails setText:[headerDetails getHeaderDetails:myJsonAsObject.account]];
     [todaysDate setText:[headerDetails getHeaderTodayDate]];
     
-//    [transactionsTable ];
+    //    [transactionsTable ];
     
     accDetails = nil;
     todaysDate = nil;
     myJsonAsObject = nil;
     headerDetails = nil;
-
+    
     // Do any additional setup after loading the view from its nib.
 }
 
