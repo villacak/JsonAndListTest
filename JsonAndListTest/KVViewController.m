@@ -50,14 +50,15 @@
 
 - (void)viewDidLoad
 {
+    if ([transactionsTable respondsToSelector:@selector(setSeparatorInset:)]) {
+        [transactionsTable setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    }
+
     [super viewDidLoad];
     KVTransactionsHeaderScreen *headerDetails = [[KVTransactionsHeaderScreen alloc] init];
     [accDetails setText:[headerDetails getHeaderDetails:myJsonAsObject.account]];
     [todaysDate setText:[headerDetails getHeaderTodayDate]];
     
-    if ([self->transactionsTable respondsToSelector:@selector(setSeparatorInset:)]) {
-        [self->transactionsTable setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
-    }
     
     accDetails = nil;
     todaysDate = nil;
