@@ -20,7 +20,7 @@
     NSMutableArray *arrayGrouped;
     
     KVTransactions *kvTransactions = nil;
-    KVPending *kvPendings = nil;
+//    KVPending *kvPendings = nil;
     
     NSString *tempDateAsSeconds = nil;
     NSDate *tempDate = nil;
@@ -34,14 +34,15 @@
         tempDate = [KVStringUtil convertStringToDate:kvTransactions.dateTransaction];
         double intervalInSecs = [tempDate timeIntervalSince1970];
         tempDateAsSeconds = [NSString stringWithFormat:@"%f", intervalInSecs];
-        if ([dictionaryToReturn objectForKey:tempDateAsSeconds] != nil) {
-            arrayGrouped = [[NSMutableArray alloc] initWithArray:[dictionaryToReturn valueForKey:tempDateAsSeconds]];
-            [arrayGrouped addObject:kvTransactions];
-        } else {
-            arrayGrouped = [[NSMutableArray alloc] init];
-            [arrayGrouped addObject:kvTransactions];
-        }
-        [dictionaryToReturn setObject:arrayGrouped forKey:tempDateAsSeconds];
+//        if ([dictionaryToReturn objectForKey:tempDateAsSeconds] != nil) {
+//            arrayGrouped = [[NSMutableArray alloc] initWithArray:[dictionaryToReturn valueForKey:tempDateAsSeconds]];
+//            [arrayGrouped addObject:kvTransactions];
+//        } else {
+//            arrayGrouped = [[NSMutableArray alloc] init];
+//            [arrayGrouped addObject:kvTransactions];
+//        }
+//        [dictionaryToReturn setObject:arrayGrouped forKey:tempDateAsSeconds];
+        [dictionaryToReturn setObject:kvTransactions forKey:tempDateAsSeconds];
         tempDate = nil;
         tempDateAsSeconds = nil;
         arrayGrouped = nil;
@@ -49,29 +50,29 @@
     }
     
     
-    for (NSArray *pendingLoop in pendingArray) {
-        kvPendings = [[KVPending alloc] initWithValueIdPending:[pendingLoop valueForKey:@"idPending"]
-                                              valueDescription:[pendingLoop valueForKey:@"description"]
-                                          valueDateTransaction:[pendingLoop valueForKey:@"dateTransaction"]
-                                                   valueAmount:[pendingLoop valueForKey:@"amount"]];
-        
-        tempDate = [KVStringUtil convertStringToDate:kvPendings.dateTransaction];
-        double intervalInSecs = [tempDate timeIntervalSince1970];
-        tempDateAsSeconds = [NSString stringWithFormat:@"%f", intervalInSecs];
-        if ([dictionaryToReturn objectForKey:tempDateAsSeconds] != nil) {
-            arrayGrouped = [[NSMutableArray alloc] initWithArray:[dictionaryToReturn valueForKey:tempDateAsSeconds]];
-            [arrayGrouped addObject:kvPendings];
-        } else {
-            arrayGrouped = [[NSMutableArray alloc] init];
-            [arrayGrouped addObject:kvPendings];
-            
-        }
-        [dictionaryToReturn setObject:arrayGrouped forKey:tempDateAsSeconds];
-        tempDate = nil;
-        tempDateAsSeconds = nil;
-        arrayGrouped = nil;
-        kvPendings = nil;
-    }
+//    for (NSArray *pendingLoop in pendingArray) {
+//        kvPendings = [[KVPending alloc] initWithValueIdPending:[pendingLoop valueForKey:@"idPending"]
+//                                              valueDescription:[pendingLoop valueForKey:@"description"]
+//                                          valueDateTransaction:[pendingLoop valueForKey:@"dateTransaction"]
+//                                                   valueAmount:[pendingLoop valueForKey:@"amount"]];
+//        
+//        tempDate = [KVStringUtil convertStringToDate:kvPendings.dateTransaction];
+//        double intervalInSecs = [tempDate timeIntervalSince1970];
+//        tempDateAsSeconds = [NSString stringWithFormat:@"%f", intervalInSecs];
+//        if ([dictionaryToReturn objectForKey:tempDateAsSeconds] != nil) {
+//            arrayGrouped = [[NSMutableArray alloc] initWithArray:[dictionaryToReturn valueForKey:tempDateAsSeconds]];
+//            [arrayGrouped addObject:kvPendings];
+//        } else {
+//            arrayGrouped = [[NSMutableArray alloc] init];
+//            [arrayGrouped addObject:kvPendings];
+//            
+//        }
+//        [dictionaryToReturn setObject:arrayGrouped forKey:tempDateAsSeconds];
+//        tempDate = nil;
+//        tempDateAsSeconds = nil;
+//        arrayGrouped = nil;
+//        kvPendings = nil;
+//    }
     return dictionaryToReturn;
 }
 

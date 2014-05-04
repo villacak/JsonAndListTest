@@ -11,14 +11,20 @@
 #import "KVParserDetail.h"
 #import "KVTransactionsHeaderScreen.h"
 #import "KVTransactionsTable.h"
+#import "KVTableViewCell.h"
+#import "KVTableGroupViewCell.h"
 
 @interface KVViewController ()
+
+@property (strong, nonatomic) NSArray *activityListDescendingOrder;
 
 @end
 
 
 
 @implementation KVViewController
+
+@synthesize activityListDescendingOrder = _activityListDescendingOrder;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -34,7 +40,7 @@
         
         // Reverse order still not working
         activityListKeys = [activityDictionary allKeys];
-        activityListDescendingOrder = [activityListKeys sortedArrayUsingComparator:^(id obj1, id obj2) {
+        _activityListDescendingOrder = [activityListKeys sortedArrayUsingComparator:^(id obj1, id obj2) {
             return [obj2 compare:obj1 options:NSNumericSearch];
         }];
         pathJsonFromFile = nil;
@@ -49,7 +55,9 @@
     [accDetails setText:[headerDetails getHeaderDetails:myJsonAsObject.account]];
     [todaysDate setText:[headerDetails getHeaderTodayDate]];
     
-    //    [transactionsTable ];
+    if ([self->transactionsTable respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self->transactionsTable setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    }
     
     accDetails = nil;
     todaysDate = nil;
@@ -63,6 +71,39 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.activityListDescendingOrder count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSLog(@"cellForRowAtIndexPath");
+    NSString *uniqueIdentifier = @"transactionsTableId";
+    
+    KVTableViewCell *transCell = (KVTableViewCell *) [tableView dequeueReusableCellWithIdentifier:uniqueIdentifier];
+    NSString *innerDicTransaction = [_activityListDescendingOrder objectAtIndex:indexPath.row];
+
+    //headerCell = (KVTableGroupViewCell *) [self->transactionsTable dequeueReusableCellWithIdentifier:uniqueIdentifier];
+    
+    //KVTransactions *transaction = [activityDictionary objectForKey:innerDicTransaction];//[_activityListDescendingOrder objectAtIndex:[indexPath row]];
+    
+    if (!transCell)
+    {
+        [tableView registerNib:[UINib nibWithNibName:@"DetailCell" bundle:nil] forCellReuseIdentifier:uniqueIdentifier];
+        transCell = [tableView dequeueReusableCellWithIdentifier:uniqueIdentifier];
+    }
+    
+    KVTransactions *tempArray = [activityDictionary objectForKey:innerDicTransaction];
+    transCell.description.text = tempArray.description;
+    transCell.value.text = [KVStringUtil convertNumberValueToValueWithDecimals:tempArray.amount];
+    
+    
+    return transCell;
 }
 
 @end

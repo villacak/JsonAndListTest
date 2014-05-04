@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "KVDetailsJSON.h"
 
-@interface KVViewController : UIViewController
+@interface KVViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 {
     KVDetailsJSON *myJsonAsObject;
     NSDictionary *activityDictionary;
-    NSArray *activityListDescendingOrder;
+    //NSArray *activityListDescendingOrder;
     NSArray *activityListKeys;
     
     IBOutlet UILabel *accDetails;
