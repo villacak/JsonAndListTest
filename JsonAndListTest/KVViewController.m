@@ -17,6 +17,12 @@
 @interface KVViewController ()
 
 @property (strong, nonatomic) NSArray *activityListDescendingOrder;
+@property (strong, nonatomic) NSString *dateSecondsTemp;
+//@property (strong, nonatomic) KVTableViewCell *transCell ;
+//@property (strong, nonatomic) KVTableGroupViewCell *groupcell;
+@property (strong, nonatomic) KVTransactions *tempArrayTrans;
+@property (strong, nonatomic) KVPending *tempArrayPend;
+
 
 @end
 
@@ -53,7 +59,7 @@
     if ([transactionsTable respondsToSelector:@selector(setSeparatorInset:)]) {
         [transactionsTable setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     }
-
+    
     [super viewDidLoad];
     KVTransactionsHeaderScreen *headerDetails = [[KVTransactionsHeaderScreen alloc] init];
     [accDetails setText:[headerDetails getHeaderDetails:myJsonAsObject.account]];
@@ -82,29 +88,51 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    NSLog(@"cellForRowAtIndexPath");
     NSString *uniqueIdentifier = @"transactionsTableId";
-    
-    KVTableViewCell *transCell = (KVTableViewCell *) [tableView dequeueReusableCellWithIdentifier:uniqueIdentifier];
     NSString *innerDicTransaction = [_activityListDescendingOrder objectAtIndex:indexPath.row];
-
-    //headerCell = (KVTableGroupViewCell *) [self->transactionsTable dequeueReusableCellWithIdentifier:uniqueIdentifier];
+    NSString *stringDate = [KVStringUtil convertSecondsToDate:innerDicTransaction];
     
-    //KVTransactions *transaction = [activityDictionary objectForKey:innerDicTransaction];//[_activityListDescendingOrder objectAtIndex:[indexPath row]];
     
-    if (!transCell)
-    {
-        [tableView registerNib:[UINib nibWithNibName:@"DetailCell" bundle:nil] forCellReuseIdentifier:uniqueIdentifier];
-        transCell = [tableView dequeueReusableCellWithIdentifier:uniqueIdentifier];
+    KVTableViewCell *transCell = nil;
+    KVTableGroupViewCell *groupcell = nil;
+    NSArray *valuesArray = [[NSArray alloc] initWithArray:[activityDictionary valueForKey:innerDicTransaction]];
+    
+    
+//    groupcell = (KVTableGroupViewCell *) [tableView dequeueReusableCellWithIdentifier:uniqueIdentifier];
+//    
+//    if (!groupcell)
+//    {
+//        [tableView registerNib:[UINib nibWithNibName:@"GroupCell" bundle:nil] forCellReuseIdentifier:uniqueIdentifier];
+//        groupcell = [tableView dequeueReusableCellWithIdentifier:uniqueIdentifier];
+//    }
+//    groupcell.date.text = stringDate;
+//    groupcell.days.text = @"----";
+    
+    
+    transCell = (KVTableViewCell *) [tableView dequeueReusableCellWithIdentifier:uniqueIdentifier];
+    for (NSArray *object in valuesArray) {
+        if (!transCell)
+        {
+            [tableView registerNib:[UINib nibWithNibName:@"DetailCell" bundle:nil] forCellReuseIdentifier:uniqueIdentifier];
+            transCell = [tableView dequeueReusableCellWithIdentifier:uniqueIdentifier];
+        }
+        if ([object isMemberOfClass:[KVTransactions class]]) {
+            self.tempArrayTrans = [[KVTransactions alloc] initWithValueIdTransaction:[object valueForKey:@"idTransaction"]
+                                                                valueDateTransaction:[object valueForKey:@"dateTransaction"]
+                                                                    valueDescription:[object valueForKey:@"description"]
+                                                                         valueAmount:[object valueForKey:@"amount"]];
+            transCell.description.text = self.tempArrayTrans.description;
+            transCell.value.text = [KVStringUtil convertNumberValueToValueWithDecimals:self.tempArrayTrans.amount];
+        } else {
+            self.tempArrayPend = [[KVPending alloc] initWithValueIdPending:[object valueForKey:@"idPending"]
+                                                          valueDescription:[object valueForKey:@"description"]
+                                                      valueDateTransaction:[object valueForKey:@"dateTransaction"]
+                                                               valueAmount:[object valueForKey:@"amount"]];
+            transCell.description.text = self.tempArrayPend.description;
+            transCell.value.text = [KVStringUtil convertNumberValueToValueWithDecimals:self.tempArrayPend.amount];
+        }
+        
     }
-    
-    KVTransactions *tempArray = [activityDictionary objectForKey:innerDicTransaction];
-    transCell.description.text = tempArray.description;
-    transCell.value.text = [KVStringUtil convertNumberValueToValueWithDecimals:tempArray.amount];
-    
-    
     return transCell;
 }
-
 @end

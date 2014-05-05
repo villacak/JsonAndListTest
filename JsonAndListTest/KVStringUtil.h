@@ -12,9 +12,12 @@
 
 +(NSString *) convertNumberValueToValueWithDecimals:(NSNumber *)valueNumber;
 
++(NSString *) convertSecondsToDate:(NSString *)secondsAsString;
+
 +(NSDate *) convertStringToDate:(NSString *)dateString;
 
 +(NSString *) convertDateToString:(NSDate *)date;
 
++(NSString *) getNumberOfDaysFromStartDate:(NSString *)startDate toEndDate:(NSString *)endDate;
 
 @end
