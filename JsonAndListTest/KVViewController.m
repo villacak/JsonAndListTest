@@ -18,11 +18,8 @@
 
 @property (strong, nonatomic) NSArray *activityListDescendingOrder;
 @property (strong, nonatomic) NSString *dateSecondsTemp;
-//@property (strong, nonatomic) KVTableViewCell *transCell ;
-//@property (strong, nonatomic) KVTableGroupViewCell *groupcell;
 @property (strong, nonatomic) KVTransactions *tempArrayTrans;
 @property (strong, nonatomic) KVPending *tempArrayPend;
-
 
 @end
 
@@ -43,8 +40,6 @@
         KVTransactionsTable *transactionTable = [[KVTransactionsTable alloc] init];
         activityDictionary = [transactionTable createDictionaryMergingTransactions:myJsonAsObject.transactionsArray
                                                                        andPendings:myJsonAsObject.pendingArray];
-        
-        // Reverse order still not working
         activityListKeys = [activityDictionary allKeys];
         _activityListDescendingOrder = [activityListKeys sortedArrayUsingComparator:^(id obj1, id obj2) {
             return [obj2 compare:obj1 options:NSNumericSearch];
@@ -65,13 +60,10 @@
     [accDetails setText:[headerDetails getHeaderDetails:myJsonAsObject.account]];
     [todaysDate setText:[headerDetails getHeaderTodayDate]];
     
-    
     accDetails = nil;
     todaysDate = nil;
     myJsonAsObject = nil;
     headerDetails = nil;
-    
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,20 +75,36 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.activityListDescendingOrder count];
+    NSString *innerDicTransaction = [_activityListDescendingOrder objectAtIndex:section];
+    NSArray *valuesArray = [[NSArray alloc] initWithArray:[activityDictionary valueForKey:innerDicTransaction]];
+    return [valuesArray count];
 }
+
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [_activityListDescendingOrder count];
+}
+
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *innerDicTransaction = [_activityListDescendingOrder objectAtIndex:section];
+    NSString *stringDate = [KVStringUtil convertSecondsToDate:innerDicTransaction];
+    return  stringDate;
+}
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *uniqueIdentifier = @"transactionsTableId";
     NSString *innerDicTransaction = [_activityListDescendingOrder objectAtIndex:indexPath.row];
-    NSString *stringDate = [KVStringUtil convertSecondsToDate:innerDicTransaction];
-    
+//    NSString *stringDate = [KVStringUtil convertSecondsToDate:innerDicTransaction];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:uniqueIdentifier];
     
     KVTableViewCell *transCell = nil;
-    KVTableGroupViewCell *groupcell = nil;
+//   KVTableGroupViewCell *groupcell = nil;
     NSArray *valuesArray = [[NSArray alloc] initWithArray:[activityDictionary valueForKey:innerDicTransaction]];
-    
     
 //    groupcell = (KVTableGroupViewCell *) [tableView dequeueReusableCellWithIdentifier:uniqueIdentifier];
 //    
@@ -107,7 +115,6 @@
 //    }
 //    groupcell.date.text = stringDate;
 //    groupcell.days.text = @"----";
-    
     
     transCell = (KVTableViewCell *) [tableView dequeueReusableCellWithIdentifier:uniqueIdentifier];
     for (NSArray *object in valuesArray) {
