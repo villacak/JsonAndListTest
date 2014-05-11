@@ -42,7 +42,7 @@
             [arrayGrouped addObject:kvTransactions];
         }
         [dictionaryToReturn setObject:arrayGrouped forKey:tempDateAsSeconds];
-//        [dictionaryToReturn setObject:kvTransactions forKey:tempDateAsSeconds];
+        //        [dictionaryToReturn setObject:kvTransactions forKey:tempDateAsSeconds];
         tempDate = nil;
         tempDateAsSeconds = nil;
         arrayGrouped = nil;
@@ -76,4 +76,36 @@
     return dictionaryToReturn;
 }
 
+
+//-(NSDictionary *) createFlatDictionaryMergingTransactions:(NSArray *)transactionArray andPendings:(NSArray *)pendingArrays
+//{
+//    NSMutableArray *dictionaryToReturn = [[NSMutableArray alloc] init];
+//    
+//    KVTransactions *kvTransactions = nil;
+//    KVPending *kvPendings = nil;
+//    
+//    NSString *tempDateAsSeconds = nil;
+//    NSDate *tempDate = nil;
+//    
+//    
+//    for (NSArray *transactionLoop in transactionArray) {
+//        kvTransactions = [[KVTransactions alloc] initWithValueIdTransaction:[transactionLoop valueForKey:@"idTransaction"]
+//                                                       valueDateTransaction:[transactionLoop valueForKey:@"dateTransaction"]
+//                                                           valueDescription:[transactionLoop valueForKey:@"description"]
+//                                                                valueAmount:[transactionLoop valueForKey:@"amount"]];
+//        
+//        tempDate = [KVStringUtil convertStringToDate:kvTransactions.dateTransaction];
+//        double intervalInSecs = [tempDate timeIntervalSince1970];
+//        tempDateAsSeconds = [NSString stringWithFormat:@"%f", intervalInSecs];
+//        [dictionaryToReturn setObject:arrayGrouped forKey:tempDateAsSeconds];
+//        
+//        
+//        //        [dictionaryToReturn setObject:kvTransactions forKey:tempDateAsSeconds];
+//        tempDate = nil;
+//        tempDateAsSeconds = nil;
+//        arrayGrouped = nil;
+//        kvTransactions = nil;
+//    }
+//    
+//}
 @end

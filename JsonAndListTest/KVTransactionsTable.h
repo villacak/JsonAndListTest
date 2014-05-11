@@ -19,6 +19,8 @@
 
 -(NSDictionary *) createDictionaryMergingTransactions:(NSArray *)transactionArray andPendings:(NSArray *)pendingArray;
 
+//-(NSDictionary *) createFlatDictionaryMergingTransactions:(NSArray *)transactionArray andPendings:(NSArray *)pendingArrays;
+
 
 
 @end

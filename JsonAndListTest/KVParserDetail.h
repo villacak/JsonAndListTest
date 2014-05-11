@@ -23,7 +23,7 @@
 
 -(void)parseAccount:(NSDictionary *)jsonAccount;
 -(void)parseTransactions:(NSDictionary *)jsonTRansactions;
--(void)parsePending:(NSDictionary *)jsonPending;
+//-(void)parsePending:(NSDictionary *)jsonPending;
 
 
 @end

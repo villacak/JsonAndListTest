@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		330E31E2190CACE5000C92D4 /* KVStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 330E31E1190CACE5000C92D4 /* KVStringUtil.m */; };
 		330E31E5190CB936000C92D4 /* KVTransactionsTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 330E31E4190CB936000C92D4 /* KVTransactionsTable.m */; };
+		331095F2191A671900F74BE4 /* KVHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 331095F1191A671900F74BE4 /* KVHeader.m */; };
 		331C84C719069E62001C5A44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331C84C619069E62001C5A44 /* Foundation.framework */; };
 		331C84C919069E62001C5A44 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331C84C819069E62001C5A44 /* CoreGraphics.framework */; };
 		331C84CB19069E62001C5A44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331C84CA19069E62001C5A44 /* UIKit.framework */; };
@@ -51,6 +52,8 @@
 		330E31E1190CACE5000C92D4 /* KVStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVStringUtil.m; sourceTree = "<group>"; };
 		330E31E3190CB936000C92D4 /* KVTransactionsTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVTransactionsTable.h; sourceTree = "<group>"; };
 		330E31E4190CB936000C92D4 /* KVTransactionsTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVTransactionsTable.m; sourceTree = "<group>"; };
+		331095F0191A671900F74BE4 /* KVHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVHeader.h; sourceTree = "<group>"; };
+		331095F1191A671900F74BE4 /* KVHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVHeader.m; sourceTree = "<group>"; };
 		331C84C319069E62001C5A44 /* JsonAndListTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JsonAndListTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		331C84C619069E62001C5A44 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		331C84C819069E62001C5A44 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -212,6 +215,8 @@
 				331C84FF19069FFE001C5A44 /* KVPending.m */,
 				331C85011906A031001C5A44 /* KVTransactions.h */,
 				331C85021906A031001C5A44 /* KVTransactions.m */,
+				331095F0191A671900F74BE4 /* KVHeader.h */,
+				331095F1191A671900F74BE4 /* KVHeader.m */,
 			);
 			name = au.com.domain;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				331C850019069FFE001C5A44 /* KVPending.m in Sources */,
 				33C2A4731907E5EB00F92768 /* KVViewController.m in Sources */,
 				33471B15190A63E200942AE1 /* KVTransactionsHeaderScreen.m in Sources */,
+				331095F2191A671900F74BE4 /* KVHeader.m in Sources */,
 				3396EFFC1913D434007AB6B5 /* KVTableGroupViewCell.m in Sources */,
 				330E31E2190CACE5000C92D4 /* KVStringUtil.m in Sources */,
 				331C84FD19069FC2001C5A44 /* KVDetailsJSON.m in Sources */,

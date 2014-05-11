@@ -8,7 +8,7 @@
             <connections>
                 <outlet property="accDetails" destination="a6r-1L-HGd" id="l6A-Xs-BHH"/>
                 <outlet property="todaysDate" destination="svv-Nq-Jjc" id="usc-1B-ghf"/>
-                <outlet property="transactionsTable" destination="GbM-iZ-wfg" id="cIc-gD-cou"/>
+                <outlet property="transactionsTableUi" destination="GbM-iZ-wfg" id="NpV-WP-Nh3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

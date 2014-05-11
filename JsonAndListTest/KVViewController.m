@@ -15,6 +15,13 @@
 #import "KVTableGroupViewCell.h"
 
 @interface KVViewController ()
+{
+    /* If you want a not flat array to be displayed in the table,
+     * mean, flat will display the UITableViewCell for a header, then
+     * change the variable to YES.
+     */
+    BOOL *isFlatArray;
+}
 
 @property (strong, nonatomic) NSArray *activityListDescendingOrder;
 @property (strong, nonatomic) NSString *dateSecondsTemp;
@@ -34,16 +41,22 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        isFlatArray = NO;
         // Custom initialization
         NSString *pathJsonFromFile = [[NSBundle mainBundle] pathForResource:@"dummy" ofType:@"json"];
         myJsonAsObject = [[[KVParserDetail alloc] init] parseJSON:pathJsonFromFile];
         KVTransactionsTable *transactionTable = [[KVTransactionsTable alloc] init];
         activityDictionary = [transactionTable createDictionaryMergingTransactions:myJsonAsObject.transactionsArray
                                                                        andPendings:myJsonAsObject.pendingArray];
-        activityListKeys = [activityDictionary allKeys];
+        NSArray *activityListKeys = [activityDictionary allKeys];
         _activityListDescendingOrder = [activityListKeys sortedArrayUsingComparator:^(id obj1, id obj2) {
             return [obj2 compare:obj1 options:NSNumericSearch];
         }];
+        
+//        if (isFlatArray) {
+//            activityDictionary = [transactionTable ]
+//        }
+        activityListKeys = nil;
         pathJsonFromFile = nil;
     }
     return self;
@@ -51,8 +64,8 @@
 
 - (void)viewDidLoad
 {
-    if ([transactionsTable respondsToSelector:@selector(setSeparatorInset:)]) {
-        [transactionsTable setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    if ([transactionsTableUi respondsToSelector:@selector(setSeparatorInset:)]) {
+        [transactionsTableUi setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     }
     
     [super viewDidLoad];
@@ -130,7 +143,7 @@
                                                                          valueAmount:[object valueForKey:@"amount"]];
             transCell.description.text = self.tempArrayTrans.description;
             transCell.value.text = [KVStringUtil convertNumberValueToValueWithDecimals:self.tempArrayTrans.amount];
-        } else {
+        } else if ([object isMemberOfClass:[KVPending class]]) {
             self.tempArrayPend = [[KVPending alloc] initWithValueIdPending:[object valueForKey:@"idPending"]
                                                           valueDescription:[object valueForKey:@"description"]
                                                       valueDateTransaction:[object valueForKey:@"dateTransaction"]
